@@ -1,0 +1,55 @@
+#服务器配置信息，包含了端口号，部署程序名称，session过期时间，编码等
+server:
+  port: 8080
+  servlet:    context-path:     session:      timeout: 60
+  tomcat:    uri-encoding: UTF-8
+    
+spring:
+###ThymeLeaf配置
+  thymeleaf:
+    #模板的模式，支持 HTML, XML TEXT JAVASCRIPT
+    mode: HTML5
+    #编码 可不用配置
+    encoding: UTF-8
+    #内容类别,可不用配置
+    content-type: text/html
+    #开发配置为false,避免修改模板还要重启服务器
+    cache: false
+    #配置模板路径，默认是templates，可以不用配置
+    prefix: classpath:/templates
+  #配置静态资源位置（当前为默认配置）
+  mvc:
+    static-path-pattern: /static/**
+    #数据源配置，采用阿里数据源
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/bbs?characterEncoding=utf-8
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    # 下面的配置如果想生效需要自己配置DruidConfig类，在java的util包下
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    
+    #mybatis的配置
+mybatis:  type-aliases-package: com.cxp.sbt.bean
+  mapper-locations: classpath:mapper/*.xml
+  #mapper的通用配置
+  # settings 下的配置
+  configuration:
+  # 开启驼峰命名功能 其它的一些属性参考 mybatis-config.xml中的settings属性
+     map-underscore-to-camel-case: true 
+#page分页插件的配置   
+pagehelper:  auto-dialect: mysql
+  offset-as-page-num: true
+  row-bounds-with-count: true
+  reasonable: false
