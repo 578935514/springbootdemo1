@@ -1,0 +1,17 @@
+11:03:33.219 logback [restartedMain] INFO  c.cxp.sbt.Springboottest1Application - Starting Springboottest1Application on LAPTOP-CHTH85GG with PID 9596 (E:\IdeaProjects\springbootdemo1\target\classes started by 陈晓鹏 in E:\IdeaProjects\springbootdemo1)
+11:03:33.223 logback [restartedMain] INFO  c.cxp.sbt.Springboottest1Application - The following profiles are active: dev
+11:03:33.261 logback [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+11:03:33.261 logback [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+11:03:34.416 logback [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+11:03:34.442 logback [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+11:03:34.443 logback [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+11:03:34.443 logback [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.33]
+11:03:34.591 logback [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+11:03:34.592 logback [restartedMain] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1330 ms
+11:03:35.349 logback [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+11:03:35.681 logback [restartedMain] WARN  o.t.templatemode.TemplateMode - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+11:03:35.918 logback [restartedMain] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+11:03:36.012 logback [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+11:03:36.083 logback [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+11:03:36.132 logback [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+11:03:36.142 logback [restartedMain] INFO  c.cxp.sbt.Springboottest1Application - Started Springboottest1Application in 3.397 seconds (JVM running for 4.627)

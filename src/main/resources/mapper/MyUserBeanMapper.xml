@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cxp.sbt.mapper.MyUserBeanMapper">
-  <resultMap id="BaseResultMap" type="com.cxp.sbt.bean.MyUserBean">
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="usernaem" jdbcType="VARCHAR" property="usernaem" />
-    <result column="password" jdbcType="VARCHAR" property="password" />
-  </resultMap>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from my_user
-    where id = #{id,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" parameterType="com.cxp.sbt.bean.MyUserBean">
-    insert into my_user (id, usernaem, password
-      )
-    values (#{id,jdbcType=INTEGER}, #{usernaem,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}
-      )
-  </insert>
-  <update id="updateByPrimaryKey" parameterType="com.cxp.sbt.bean.MyUserBean">
-    update my_user
-    set usernaem = #{usernaem,jdbcType=VARCHAR},
-      password = #{password,jdbcType=VARCHAR}
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select id, usernaem, password
-    from my_user
-    where id = #{id,jdbcType=INTEGER}
-  </select>
-  <select id="selectAll" resultMap="BaseResultMap">
-    select id, usernaem, password
-    from my_user
-  </select>
-  
+    <resultMap id="BaseResultMap" type="com.cxp.sbt.bean.MyUserBean">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="usernaem" jdbcType="VARCHAR" property="usernaem"/>
+        <result column="password" jdbcType="VARCHAR" property="password"/>
+    </resultMap>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete from my_user
+        where id = #{id,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" parameterType="com.cxp.sbt.bean.MyUserBean">
+        insert into my_user (id, usernaem, password
+        )
+        values (#{id,jdbcType=INTEGER}, #{usernaem,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}
+        )
+    </insert>
+    <update id="updateByPrimaryKey" parameterType="com.cxp.sbt.bean.MyUserBean">
+        update my_user
+        set usernaem = #{usernaem,jdbcType=VARCHAR},
+        password = #{password,jdbcType=VARCHAR}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select id, usernaem, password
+        from my_user
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <select id="selectAll" resultMap="BaseResultMap">
+        select id, usernaem, password
+        from my_user
+    </select>
+
 </mapper>

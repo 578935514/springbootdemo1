@@ -1,6 +1,7 @@
 package com.cxp.sbt.mapper;
 
 import com.cxp.sbt.bean.MyUserBean;
+
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;

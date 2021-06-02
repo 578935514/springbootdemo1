@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>测试thymeleaf</title>
-<link th:href="@{/static/css/index.css}" rel="stylesheet">
-<script type="text/javascript" th:src="@{/static/js/index.js}"></script>
+    <meta charset="UTF-8">
+    <title>测试thymeleaf</title>
+    <link th:href="@{/static/css/index.css}" rel="stylesheet">
+    <script type="text/javascript" th:src="@{/static/js/index.js}"></script>
 </head>
 <body>
 
 <!--thymeleaf常用标签使用总结  -->
-<span th:text="${name}" >你好</span>
+<span th:text="${name}">你好</span>
 
-用户名：<input type="text" th:name="${user.age}" th:id="${user.age}" 
-		th:value="${user.name}">
+用户名：<input type="text" th:name="${user.age}" th:id="${user.age}"
+           th:value="${user.name}">
 
 </body>
 </html>

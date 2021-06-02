@@ -2,7 +2,7 @@ package com.cxp.sbt.bean;
 
 
 public class MyUserBean {
-	
+
     private Integer id;
 
     private String usernaem;
@@ -33,17 +33,17 @@ public class MyUserBean {
         this.password = password == null ? null : password.trim();
     }
 
-	public MyUserBean(Integer id, String usernaem, String password) {
-		
-		this.id = id;
-		this.usernaem = usernaem;
-		this.password = password;
-	}
+    public MyUserBean(Integer id, String usernaem, String password) {
 
-	public MyUserBean() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-    
-    
+        this.id = id;
+        this.usernaem = usernaem;
+        this.password = password;
+    }
+
+    public MyUserBean() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+
 }

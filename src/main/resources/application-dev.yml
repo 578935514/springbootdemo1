@@ -1,18 +1,23 @@
 #服务器配置信息，包含了端口号，部署程序名称，session过期时间，编码等
 server:
-  port: 8080
-  servlet:    context-path:     session:      timeout: 60
-  tomcat:    uri-encoding: UTF-8
-    
+  port: 8088
+  servlet:
+    context-path:
+    session:
+      timeout: 60
+  tomcat:
+    uri-encoding: UTF-8
+logging:
+#config:classpath:/自定义logging的文件名，默认为logback-spring.xml
 spring:
-###ThymeLeaf配置
+  ###ThymeLeaf配置
   thymeleaf:
     #模板的模式，支持 HTML, XML TEXT JAVASCRIPT
     mode: HTML5
     #编码 可不用配置
     encoding: UTF-8
     #内容类别,可不用配置
-    content-type: text/html
+    #content-type: text/html
     #开发配置为false,避免修改模板还要重启服务器
     cache: false
     #配置模板路径，默认是templates，可以不用配置
@@ -21,35 +26,78 @@ spring:
   mvc:
     static-path-pattern: /static/**
     #数据源配置，采用阿里数据源
-  datasource:
-    username: root
-    password: 123456
-    url: jdbc:mysql://localhost:3306/bbs?characterEncoding=utf-8
-    driver-class-name: com.mysql.jdbc.Driver
-    type: com.alibaba.druid.pool.DruidDataSource
-    # 下面的配置如果想生效需要自己配置DruidConfig类，在java的util包下
-    initialSize: 5
-    minIdle: 5
-    maxActive: 20
-    maxWait: 60000
-    timeBetweenEvictionRunsMillis: 60000
-    minEvictableIdleTimeMillis: 300000
-    validationQuery: SELECT 1 FROM DUAL
-    testWhileIdle: true
-    testOnBorrow: false
-    testOnReturn: false
-    poolPreparedStatements: true
-    
-    #mybatis的配置
-mybatis:  type-aliases-package: com.cxp.sbt.bean
-  mapper-locations: classpath:mapper/*.xml
-  #mapper的通用配置
-  # settings 下的配置
-  configuration:
-  # 开启驼峰命名功能 其它的一些属性参考 mybatis-config.xml中的settings属性
-     map-underscore-to-camel-case: true 
+#  datasource:
+#    master:
+#      username: root
+#      password: 123456
+#      url: jdbc:mysql://127.0.0.1:3306/tgyj?characterEncoding=utf-8
+#      driver-class-name: com.mysql.jdbc.Driver
+#      type: com.alibaba.druid.pool.DruidDataSource
+#      # 下面的配置如果想生效需要自己配置DruidConfig类，在java的util包下
+#      initialSize: 5
+#      minIdle: 5
+#      maxActive: 20
+#      maxWait: 60000
+#      timeBetweenEvictionRunsMillis: 60000
+#      minEvictableIdleTimeMillis: 300000
+#      validationQuery: SELECT 1 FROM DUAL
+#      testWhileIdle: true
+#      testOnBorrow: false
+#      testOnReturn: false
+#      poolPreparedStatements: true
+#
+#    cluster:
+#      username: root
+#      password: 123456
+#      url: jdbc:mysql://127.0.0.1:3306/test?characterEncoding=utf-8
+#      driver-class-name: com.mysql.jdbc.Driver
+#      type: com.alibaba.druid.pool.DruidDataSource
+#      # 下面的配置如果想生效需要自己配置DruidConfig类，在java的util包下
+#      initialSize: 5
+#      minIdle: 5
+#      maxActive: 20
+#      maxWait: 60000
+#      timeBetweenEvictionRunsMillis: 60000
+#      minEvictableIdleTimeMillis: 300000
+#      validationQuery: SELECT 1 FROM DUAL
+#      testWhileIdle: true
+#      testOnBorrow: false
+#      testOnReturn: false
+#      poolPreparedStatements: true
+#mybatis的配置
+mybatis:
+  type-aliases-package: com.cxp.sbt.bean
+    #配置多元数据库后不在此进行配置
+    #mapper-locations: classpath:mapper/*.xml
+    #mapper的通用配置
+    # settings 下的配置
+    #configuration:
+    # 开启驼峰命名功能 其它的一些属性参考 mybatis-config.xml中的settings属性
+  #map-underscore-to-camel-case: true
 #page分页插件的配置   
-pagehelper:  auto-dialect: mysql
+pagehelper:
+  auto-dialect: mysql
   offset-as-page-num: true
   row-bounds-with-count: true
   reasonable: false
+
+  #redis的相关配置
+  redis:
+    host: 127.0.0.1
+    #Redis服务器连接端口
+    port: 6379
+    password:
+    database: 0
+    #连接超时时间（毫秒）
+    timeout: 30000
+    lettuce:
+      pool:
+        #连接池最大连接数（使用负值表示没有限制）
+        max-active: 8
+        #连接池最大阻塞等待时间（使用负值表示没有限制）
+        max-wait: -1
+        #连接池中的最大空闲连接
+        max-idle: 8
+        #连接池中的最小空闲连接
+        min-idle: 0
+

@@ -3,8 +3,8 @@
         PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
-    
-    <context id="MysqlContext"  targetRuntime="MyBatis3Simple">
+
+    <context id="MysqlContext" targetRuntime="MyBatis3Simple">
         <commentGenerator>
             <property name="suppressDate" value="false"/>
             <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
@@ -14,7 +14,7 @@
         <!--数据库连接参数 -->
         <jdbcConnection
                 driverClass="com.mysql.jdbc.Driver"
-                connectionURL="jdbc:mysql://localhost:3306/bbs?characterEncoding=utf-8"
+                connectionURL="jdbc:mysql://127.0.0.1:3306/tgyj?characterEncoding=utf-8"
                 userId="root"
                 password="123456">
         </jdbcConnection>
@@ -40,26 +40,26 @@
         </javaClientGenerator>
 
         <!-- tableName：数据库中的表名或视图名；domainObjectName：生成的实体类的类名-->
-        <table tableName="my_user" domainObjectName="MyUserBean"
+        <table tableName="sys_user" domainObjectName="SysUserBean"
                enableCountByExample="false"
                enableUpdateByExample="false"
                enableDeleteByExample="false"
                enableSelectByExample="false"
                selectByExampleQueryId="false"/>
-<!--        
-        <table tableName="xxx" domainObjectName="xxx"
-               enableCountByExample="false"
-               enableUpdateByExample="false"
-               enableDeleteByExample="false"
-               enableSelectByExample="false"
-               selectByExampleQueryId="false"/>
-        ...
-        <table tableName="xxx" domainObjectName="xxx"
-               enableCountByExample="false"
-               enableUpdateByExample="false"
-               enableDeleteByExample="false"
-               enableSelectByExample="false"
-               selectByExampleQueryId="false"/>
--->                   
+        <!--
+                <table tableName="xxx" domainObjectName="xxx"
+                       enableCountByExample="false"
+                       enableUpdateByExample="false"
+                       enableDeleteByExample="false"
+                       enableSelectByExample="false"
+                       selectByExampleQueryId="false"/>
+                ...
+                <table tableName="xxx" domainObjectName="xxx"
+                       enableCountByExample="false"
+                       enableUpdateByExample="false"
+                       enableDeleteByExample="false"
+                       enableSelectByExample="false"
+                       selectByExampleQueryId="false"/>
+        -->
     </context>
 </generatorConfiguration>
